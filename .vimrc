@@ -1,3 +1,4 @@
+filetype indent on 
 set tabstop=4
 set number
 set expandtab
@@ -12,7 +13,7 @@ if $COLORTERM == 'gnome-terminal'
   set t_Co=256
 endif
 
-highlight ColorColumn ctermbg=8
+highlight ColorColumn ctermbg=0
 
 "folding settings
 set foldmethod=indent   "fold based on indent
