@@ -6,7 +6,9 @@ set shiftwidth=4
 set colorcolumn=101
 set smartindent
 "set tw=100
+set undodir=~/.vim/undodir
 set undofile
+        
 syntax on
 
 if $COLORTERM == 'gnome-terminal'
@@ -68,6 +70,9 @@ function! Run()
         :Run
     else
         :!%:p
+        if v:shell_error != 0
+            echo "Unsuccessful file execution, you might want to create a command called Run"
+        endif
     endif
 endfunc
 
