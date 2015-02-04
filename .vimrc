@@ -93,3 +93,14 @@ function! GotoIndentTop()
 endfunc
 com! -bar Top call GotoIndentTop()
 map gt :Top<CR>
+
+
+" Use ~/.vimrc.local for non-general configuration
+if filereadable(expand("~/.vimrc.local"))
+    source ~/.vimrc.local
+endif
+
+" Use .vimrc.local for specific directory configuration
+if getcwd() != expand("~") && filereadable(".vimrc.local")
+    source .vimrc.local
+endif
