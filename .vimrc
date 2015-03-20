@@ -15,6 +15,8 @@ if $COLORTERM == 'gnome-terminal'
   set t_Co=256
 endif
 
+colorscheme delek
+highlight Comment ctermfg=8
 highlight ColorColumn ctermbg=0
 
 "folding settings
