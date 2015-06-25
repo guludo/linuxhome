@@ -52,6 +52,9 @@ PS1="[\[\e[0;34m\]\u\[\e[m\e[0;32m\]@\h\[\e[m\] \W\[\e[0;33m\]\$(git_branch_get)
 # PATHs
 export PATH=$PATH:~/bin
 
+# bc env vars
+export BC_ENV_ARGS=~/.bcrc
+
 # Import custom aliases file
 if [[ -f ~/.bash_aliases ]]; then source ~/.bash_aliases; fi
 
