@@ -55,6 +55,9 @@ export PATH=$PATH:~/bin
 # bc env vars
 export BC_ENV_ARGS=~/.bcrc
 
+# use vi editing mode
+set -o vi
+
 # Import custom aliases file
 if [[ -f ~/.bash_aliases ]]; then source ~/.bash_aliases; fi
 
