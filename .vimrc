@@ -20,6 +20,8 @@ highlight Comment ctermfg=8
 highlight ColorColumn ctermbg=0
 highlight Search ctermbg=NONE ctermfg=NONE cterm=bold
 
+set hlsearch
+
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
