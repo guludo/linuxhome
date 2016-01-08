@@ -11,6 +11,8 @@ set undofile
         
 syntax on
 
+autocmd FileType make setlocal noexpandtab
+
 if $COLORTERM == 'gnome-terminal'
   set t_Co=256
 endif
