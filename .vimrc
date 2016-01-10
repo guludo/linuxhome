@@ -20,6 +20,9 @@ highlight Comment ctermfg=8
 highlight ColorColumn ctermbg=0
 highlight Search ctermbg=NONE ctermfg=NONE cterm=bold
 
+highlight clear SpellBad
+highlight SpellBad cterm=underline
+
 set hlsearch
 
 highlight ExtraWhitespace ctermbg=red guibg=red
