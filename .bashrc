@@ -45,7 +45,13 @@ git_branch_get()
     fi
     echo -n ${branch:+" [${branch##*/}]"}
 }
-PS1="[\[\e[0;34m\]\u\[\e[m\e[0;32m\]@\h\[\e[m\] \W\[\e[0;33m\]\$(git_branch_get)\[\e[m\]]\$ "
+
+call_ps1_extra()
+{
+    [[ $(type -t ps1_extra) == function ]] && ps1_extra
+}
+
+PS1="[\[\e[0;34m\]\u\[\e[m\e[0;32m\]@\h\[\e[m\] \W\[\e[0;33m\]\$(git_branch_get)\[\e[m\]\$(call_ps1_extra --exit-status \$?)]\$ "
 
 # PATHs
 export PATH=$PATH:~/bin
