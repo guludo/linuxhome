@@ -49,12 +49,22 @@ git_branch_get()
     echo -n ${branch:+" [${branch##*/}]"}
 }
 
+exit_status_prompt()
+{
+    local status=$1
+    if [[ $1 == 0 ]]; then
+        printf "\e[0;36m:)\e[0m"
+    else
+        printf "\e[0;31m:(\e[0m"
+    fi
+}
+
 call_ps1_extra()
 {
     [[ $(type -t ps1_extra) == function ]] && ps1_extra
 }
 
-PS1="\[\e[0;34m\]\u\[\e[m\e[0;32m\]@\h\[\e[m\] \W\[\e[0;33m\]\$(git_branch_get)\[\e[m\]\$(call_ps1_extra --exit-status \$?)\n\$ "
+PS1="\$(exit_status_prompt \$?) \[\e[0;34m\]\u\[\e[m\e[0;32m\]@\h\[\e[m\] \W\[\e[0;33m\]\$(git_branch_get)\[\e[m\]\$(call_ps1_extra --exit-status \$?)\n\$ "
 
 # PATHs
 export PATH=$PATH:~/bin
