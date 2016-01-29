@@ -12,6 +12,7 @@ set undofile
 syntax on
 
 autocmd FileType make setlocal noexpandtab
+autocmd FileType cmake map <buffer> K :!man --pager="less -p '^   <cword>'" cmake-commands<CR>
 
 if $COLORTERM == 'gnome-terminal'
   set t_Co=256
