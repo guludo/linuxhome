@@ -13,6 +13,7 @@ syntax on
 
 autocmd FileType make setlocal noexpandtab
 autocmd FileType cmake map <buffer> K :!man --pager="less -p '^   <cword>'" cmake-commands<CR>
+autocmd FileType make map <buffer> K :!info make <cword><CR>
 
 if $COLORTERM == 'gnome-terminal'
   set t_Co=256
