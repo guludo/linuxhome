@@ -1,0 +1,1 @@
+bind generic f !git commit --fixup=%(commit)
