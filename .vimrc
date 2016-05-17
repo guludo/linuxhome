@@ -43,11 +43,10 @@ set nofoldenable        "dont fold by default
 hi Folded ctermbg=232 ctermfg=236
 
 " Mappings
-map <F7> :tabp<CR>
-map <F8> :tabn<CR>
-map <C-H> :tabp<CR>
-map <C-L> :tabn<CR>
+map <C-H> :bp<CR>
+map <C-L> :bn<CR>
 map <C+J> :wn
+map <C-N> :b #<CR>
 
 " Edit vimrc
 com! Vimrc edit ~/.vimrc
