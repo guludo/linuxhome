@@ -48,38 +48,8 @@ map <C-L> :bn<CR>
 map <C+J> :wn
 map <C-N> :b #<CR>
 
-" Edit vimrc
-com! Vimrc edit ~/.vimrc
-
-" My Commands
-com! -bar FixBlocks %s/\([^ ]\){/\1 {/e
-com! -bar FixBlocks2 %s/}\([^ ]\)/} \1/e
-com! -bar FixWhile %s/while(/while (/ge
-com! -bar FixCatch %s/catch(/catch (/ge
-com! -bar FixFor %s/for(/for (/ge
-com! -bar FixIf %s/if(/if (/ge
-com! -bar FixSwitch %s/switch(/switch (/ge
-com! -bar FixSpace %s/\s\+$//ge
-com! -bar FixBlockStart %s/\n *{/ {/e
-com! -bar FixExtraLines %s/\n\n\n\+/\r\r/e
-
-com! -bar JavaStyle FixBlocks | FixBlocks2 | FixWhile | FixCatch | FixFor | FixIf | FixSwitch |
-        \ FixSpace | FixBlockStart | FixExtraLines
-
 " pathogen (see https://github.com/tpope/vim-pathogen.git)
 execute pathogen#infect()
-
-" Clear signs
-function! ClearSigns()
-    let bufferNumber = 1
-    while bufexists(bufferNumber)
-        if bufname(bufferNumber)
-            :execute "sign unplace * file=" . bufname(bufferNumber)
-        endif 
-        let bufferNumber+=1
-    endwhile
-endfunction
-com! ClearSigns :call ClearSigns()
 
 " Running from Vim
 " For custom run commands, please create Run command by using :com
@@ -96,22 +66,6 @@ endfunc
 
 " Mapping Ctrl+Enter to call Run()
 map <NL> :call Run()<CR>
-
-
-" Python utils
-function! GotoIndentTop()
-    let linestr = getline(line('.'))
-    let indentSize = strlen(substitute(linestr, "[^ ].*", "", ""))
-    if indentSize > 0
-        execute "normal " . line('.') . "G"
-        execute "?^ \\{0," . (indentSize-1) . "\\}[^ ]"
-    else
-       :echo "Already on top indentation level" 
-    endif
-endfunc
-com! -bar Top call GotoIndentTop()
-map gt :Top<CR>
-
 
 " Use ~/.vimrc.local for non-general configuration
 if filereadable(expand("~/.vimrc.local"))
