@@ -15,6 +15,8 @@ autocmd FileType make setlocal noexpandtab
 autocmd FileType cmake map <buffer> K :!man --pager="less -p '^   <cword>'" cmake-commands<CR>
 autocmd FileType make map <buffer> K :!info make <cword><CR>
 
+autocmd BufRead,BufNewFile wscript setfiletype python
+
 if $COLORTERM == 'gnome-terminal'
   set t_Co=256
 endif
