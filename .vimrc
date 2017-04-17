@@ -9,6 +9,7 @@ set smartindent
 set undodir=~/.vim/undodir
 set undofile
 set laststatus=2
+set completeopt+=longest
 syntax on
 
 autocmd FileType make setlocal noexpandtab
