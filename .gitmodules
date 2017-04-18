@@ -1,3 +1,6 @@
 [submodule "vim-pathogen"]
 	path = vim-pathogen
 	url = https://github.com/tpope/vim-pathogen.git
+[submodule ".vim/bundle/nord-vim"]
+	path = .vim/bundle/nord-vim
+	url = git://github.com/arcticicestudio/nord-vim.git
