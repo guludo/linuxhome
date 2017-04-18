@@ -22,14 +22,6 @@ if $COLORTERM == 'gnome-terminal'
   set t_Co=256
 endif
 
-colorscheme delek
-highlight Comment ctermfg=8
-highlight ColorColumn ctermbg=0
-highlight Search ctermbg=NONE ctermfg=NONE cterm=bold
-
-highlight clear SpellBad
-highlight SpellBad cterm=underline
-
 set hlsearch
 
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -53,6 +45,8 @@ map <C-N> :b #<CR>
 
 " pathogen (see https://github.com/tpope/vim-pathogen.git)
 execute pathogen#infect()
+
+colorscheme nord
 
 " Running from Vim
 " For custom run commands, please create Run command by using :com
