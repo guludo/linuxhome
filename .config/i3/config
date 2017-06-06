@@ -39,6 +39,9 @@ set_from_resource $laucher i3wm.launcher dmenu_run
 # start a program launcher
 bindsym $mod+d exec $laucher
 
+set_from_resource $window_switcher i3wm.window-switcher true
+bindsym $mod+x exec $window_switcher
+
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
