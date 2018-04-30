@@ -54,6 +54,9 @@ execute pathogen#infect()
 
 colorscheme nord
 
+" Highlighting customizations
+hi rstSections cterm=bold
+
 " Running from Vim
 " For custom run commands, please create Run command by using :com
 function! Run()
