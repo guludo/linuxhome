@@ -57,6 +57,8 @@ colorscheme nord
 " Highlighting customizations
 hi rstSections cterm=bold
 
+let g:airline_powerline_fonts = 1
+
 " Running from Vim
 " For custom run commands, please create Run command by using :com
 function! Run()
