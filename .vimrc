@@ -12,6 +12,9 @@ set laststatus=2
 set completeopt+=longest
 syntax on
 
+" bash-like path command line completion
+set wildmode=longest,list
+
 autocmd FileType make setlocal noexpandtab
 autocmd FileType cmake map <buffer> K :!man --pager="less -p '^   <cword>'" cmake-commands<CR>
 autocmd FileType make map <buffer> K :!info make <cword><CR>
