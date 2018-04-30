@@ -18,6 +18,7 @@ set wildmode=longest,list
 autocmd FileType make setlocal noexpandtab
 autocmd FileType cmake map <buffer> K :!man --pager="less -p '^   <cword>'" cmake-commands<CR>
 autocmd FileType make map <buffer> K :!info make <cword><CR>
+autocmd BufNewFile,BufRead *.gawk :set syntax=awk
 
 autocmd BufRead,BufNewFile wscript setfiletype python
 
