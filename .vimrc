@@ -19,6 +19,8 @@ autocmd FileType make setlocal noexpandtab
 autocmd FileType cmake map <buffer> K :!man --pager="less -p '^   <cword>'" cmake-commands<CR>
 autocmd FileType make map <buffer> K :!info make <cword><CR>
 autocmd BufNewFile,BufRead *.gawk :set syntax=awk
+autocmd FileType gitcommit set colorcolumn=72
+autocmd FileType gitcommit set tw=72
 
 autocmd BufRead,BufNewFile wscript setfiletype python
 
