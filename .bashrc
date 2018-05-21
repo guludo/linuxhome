@@ -13,6 +13,9 @@ alias egrep='egrep --color=auto'
 # less with colors!
 alias less='less -R'
 
+# info with vi keys
+alias info='info --vi-keys'
+
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
