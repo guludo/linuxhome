@@ -1,3 +1,7 @@
+[options]
+cursor_blink = off
+
+# The color definitions below are from Nord Termite theme
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # title      Nord Termite                                    +
 # project    nord-termite                                    +
