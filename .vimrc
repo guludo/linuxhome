@@ -49,6 +49,9 @@ map <C-L> :bn<CR>
 map <C+J> :wn
 map <C-N> :b #<CR>
 
+" Escape insert mode easily
+inoremap jk <Esc>
+
 " pathogen (see https://github.com/tpope/vim-pathogen.git)
 execute pathogen#infect()
 
