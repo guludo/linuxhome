@@ -59,6 +59,8 @@ hi rstSections cterm=bold
 
 let g:airline_powerline_fonts = 1
 
+let g:ycm_global_ycm_extra_conf = '~/.ycm_global_extra_conf.py'
+
 " Running from Vim
 " For custom run commands, please create Run command by using :com
 function! Run()
