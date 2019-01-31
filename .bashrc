@@ -85,3 +85,9 @@ set -o vi
 if [[ -f ~/.bash_aliases ]]; then source ~/.bash_aliases; fi
 
 if [[ -f ~/.bashrc.local ]]; then source ~/.bashrc.local; fi
+
+if [[ -d ~/.bashrc.d ]]; then
+    for f in ~/.bashrc.d/*; do
+        source ${f}
+    done
+fi
