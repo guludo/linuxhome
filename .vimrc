@@ -23,6 +23,9 @@ autocmd BufNewFile,BufRead *.gawk :set syntax=awk
 autocmd FileType gitcommit set colorcolumn=72
 autocmd FileType gitcommit set tw=72
 
+autocmd FileType yaml setlocal tabstop=2
+autocmd FileType yaml setlocal shiftwidth=2
+
 autocmd BufRead,BufNewFile wscript setfiletype python
 
 if $COLORTERM == 'gnome-terminal'
