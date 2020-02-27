@@ -64,8 +64,6 @@ inoremap jk <Esc>
 " pathogen (see https://github.com/tpope/vim-pathogen.git)
 execute pathogen#infect()
 
-colorscheme nord
-
 " Highlighting customizations
 hi rstSections cterm=bold
 
