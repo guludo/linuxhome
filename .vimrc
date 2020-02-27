@@ -30,6 +30,9 @@ autocmd FileType go setlocal noexpandtab
 
 autocmd BufRead,BufNewFile wscript setfiletype python
 
+autocmd BufRead,BufNewFile *.star set filetype=python
+autocmd BufRead,BufNewFile *.star syntax keyword pythonStatement end
+
 if $COLORTERM == 'gnome-terminal'
   set t_Co=256
 endif
