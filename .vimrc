@@ -11,6 +11,7 @@ set undofile
 set laststatus=2
 set completeopt+=longest
 syntax on
+set clipboard=unnamedplus,exclude:cons\|linux
 
 " bash-like path command line completion
 set wildmode=longest,list
