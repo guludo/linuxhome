@@ -62,7 +62,10 @@ map <C-N> :b #<CR>
 inoremap jk <Esc>
 
 " pathogen (see https://github.com/tpope/vim-pathogen.git)
-execute pathogen#infect()
+runtime! autoload/pathogen.vim
+if exists("*pathogen#infect")
+    execute pathogen#infect()
+endif
 
 " Highlighting customizations
 hi rstSections cterm=bold
