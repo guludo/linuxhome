@@ -55,6 +55,44 @@ git_branch_get()
     echo -n ${branch:+" [${branch##*/}]"}
 }
 
+ps1_user_component()
+{
+    if [[ -z $SSH_CLIENT ]]; then
+        return
+    fi
+
+    local u=$USER
+
+    if [[ -z $u ]]; then
+        u=$(whoami 2>/dev/null)
+    fi
+
+    if [[ -z $u ]]; then
+        local u="?"
+    fi
+
+    echo $u
+}
+
+ps1_host_component()
+{
+    if [[ -z $SSH_CLIENT ]]; then
+        return
+    fi
+
+    local h=$(hostname 2>/dev/null)
+
+    if [[ -z $h ]] && [[ -f /etc/hostname ]]; then
+        local h=$(< /etc/hostname)
+    fi
+
+    if [[ -z $h ]]; then
+        local h="?"
+    fi
+
+    echo "@$h "
+}
+
 exit_status_prompt()
 {
     local status=$1
@@ -70,7 +108,7 @@ call_ps1_extra()
     [[ $(type -t ps1_extra) == function ]] && ps1_extra
 }
 
-PS1="\$(exit_status_prompt \$?) \[\e[0;34m\]\u\[\e[m\e[0;32m\]@\h\[\e[m\] \W\[\e[0;33m\]\$(git_branch_get)\[\e[m\]\$(call_ps1_extra --exit-status \$?)\n\$ "
+PS1="\$(exit_status_prompt \$?) \[\e[0;34m\]\$(ps1_user_component)\[\e[m\e[0;32m\]\$(ps1_host_component)\[\e[m\]\W\[\e[0;33m\]\$(git_branch_get)\[\e[m\]\$(call_ps1_extra --exit-status \$?)\n\$ "
 
 # PATHs
 export PATH=$PATH:~/bin
